@@ -1,21 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = 
-    React.createElement("div",{id: "parent"},
-        [React.createElement("div",{id: "child"},
-            [React.createElement("h1",{id: "header"},"h1 tag"),
-             React.createElement("h2",{id: "header"},"h2 tag")
-            ]
-        ),
-        React.createElement("div",{id: "child"},
-            [React.createElement("h1",{id: "header"},"h1 tag"),
-             React.createElement("h2",{id: "header"},"h2 tag")
-            ]
-        )
-        ]
-    );
+
+const Title = () => (
+    <div className="container">
+        <h1 id="title">Namaste React</h1>
+    </div>
+);
+
+const number = 10000;
+
+const Heading = () => (
+    <div className="heading">
+        {Title()}{number}
+        <Title />
+        <Title></Title>
+        <h2 id="head"> This is tutorial</h2>
+    </div>
+);
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(parent);
+root.render(<Heading />);
