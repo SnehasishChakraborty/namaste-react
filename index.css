@@ -1,3 +1,50 @@
-#header{
-    color: red;
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.logo {
+    width: 200px;
+    height: 150px;
+}
+
+.nav-items > ul {
+    list-style-type: none;
+    display: flex;
+    
+}
+
+.nav-items > ul > li {
+    padding: 25px;
+    margin: 25px;
+    
+}
+
+.res-card {
+    width: 200px;
+    padding: 5px;
+    margin: 10px;
+    background-color: #ebdbc0;
+}
+
+.res-card:hover {
+    box-shadow: 2px 2px #888888;
+    border: 1px solid black;
+}
+
+
+.res-logo {
+    width: 100%;
+    height: 30%;
+}
+
+.search {
+    padding: 10px;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
