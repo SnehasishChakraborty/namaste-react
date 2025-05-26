@@ -1,7 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const resList = [
+export const resList = [
     
 {
 "info": {
@@ -1430,66 +1427,3 @@ const resList = [
 }
 }
 ]
-
-const RestaurantCard = (props) => {
-    const {resData} = props;
-    const {name, cuisines, avgRating, costForTwo} = resData.info;
-    const {lastMileTravel} = resData.info.sla;
-    return (
-        <div className="res-card">
-            <img className="res-logo" 
-                alt="res logo" 
-                src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData.info.cloudinaryImageId}>
-
-            </img>
-            <h3>{name}</h3>
-            <h4>{cuisines.join(', ')}</h4>
-            <h4>{avgRating} stars</h4>
-            <h4>{lastMileTravel} kms</h4>
-            <h4>{costForTwo}</h4>
-        </div>
-    );
-}
-
-const Header = () => (
-    <div className="header">
-        <div className="logo-container">
-            <img className="logo" src="https://png.pngtree.com/png-clipart/20230922/original/pngtree-food-delivery-logo-template-design-sign-menu-vector-png-image_12522801.png">
-            </img>
-        </div>
-        <div className="nav-items">
-            <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
-                <li>Cart
-                    {/* <img className="cart-logo" src="https://www.flaticon.com/free-icons/smart-cart"></img> */}
-                </li>
-            </ul>
-        </div>
-    </div>
-);
-
-
-const Body = () => (
-    <div className="body">
-        <div className="search">Search</div>
-        <div className="res-container">
-            {
-                resList.map(res => <RestaurantCard key={res.info.id} resData={res}/>)
-            }
-        </div>
-    </div>
-);
-
-
-const AppComponent = () => (
-    <div className="app">
-        <Header />
-        <Body />
-    </div>
-);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppComponent />);
-
