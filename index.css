@@ -12,12 +12,14 @@
 .nav-items > ul {
     list-style-type: none;
     display: flex;
+    align-items: center;
+    height: 120px; 
     
 }
 
 .nav-items > ul > li {
-    padding: 25px;
-    margin: 25px;
+    padding: 0px 25px;
+    margin: 0px 25px;
     
 }
 
@@ -41,10 +43,33 @@
 
 .filter {
     padding: 10px;
+    display: flex;
 }
 
 .res-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+}
+
+.shimmer-card {
+    background-color: #f0f0f0;
+    width: 200px;
+    height: 350px;
+    margin: 20px;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login {
+    margin: 0px 15px;
+    padding: 10px 20px;
+    
+}
+
+.search-box {
+    margin: 0px 20px;
 }
