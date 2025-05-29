@@ -1,29 +1,11 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-import { MENU_API } from "../utils/constants";
 import { useParams } from "react-router";
+import useRestaurantMenu from "../utils/useRestaurantMenu"
 
 const RestaurantMenu = () => {
-    const [resInfo, setResInfo] = useState(null);
     const {resId} = useParams();
 
-    useEffect(()=>{
-        fetchData();
-    },[])
-
-    const fetchData = async () => {
-        const data = await fetch("https://proxy.cors.sh/"+MENU_API+resId,{
-        method: 'get',
-        headers: {
-            'x-cors-api-key': 'temp_42144e6dd2ffe246db5c85e971346562',
-        }
-        });
-        const json = await data.json()
-        setResInfo(json?.data);
-        
-        //setResInfo(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards);
-        console.log(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards);
-    }
+    const resInfo = useRestaurantMenu(resId);
 
     //const {name, city, avgRating, costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
 
