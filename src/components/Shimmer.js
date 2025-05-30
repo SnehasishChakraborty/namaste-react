@@ -1,16 +1,19 @@
 const Shimmer = () => {
-    const shimmerList = []
-    for(let i = 0 ; i <=5; i++){
-        shimmerList.push(i);
-    }
+    const styleString = "m-3 p-3 bg-gray-300 rounded-2xl w-56 h-56 animate-pulse"
     return (
-        <div className="shimmer-container">
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
+        <div className="flex flex-wrap">
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
+            <div className={styleString}></div>
         </div>
     );
 }

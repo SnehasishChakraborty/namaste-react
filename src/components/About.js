@@ -24,7 +24,6 @@ class About extends React.Component {
         this.setState({
             owner : json
         })
-        console.log(json)
     }
 
     render(){
