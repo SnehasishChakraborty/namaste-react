@@ -2,11 +2,13 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router";
 import useRestaurantMenu from "../utils/useRestaurantMenu"
 import RestaurantItemCategory from "./RestaurantItemCategory";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "../utils/UserContext";
 
 const RestaurantMenu = () => {
     const [showIndex, setShowIndex] = useState(0);
     const {resId} = useParams();
+    const {loggedInUser} = useContext(UserContext)
 
     const resInfo = useRestaurantMenu(resId);
 
@@ -32,6 +34,11 @@ const RestaurantMenu = () => {
                     <h1 className="text-lg">{city} - {avgRating}⭐</h1>
                 </div>
                 <h2>{cuisines.join(", ")} - {costForTwoMessage}</h2>
+                {
+                    
+                    loggedInUser !== "Guest" ? <h2 className="text-xl py-2">Welcome, {loggedInUser}! Order some delicious food while you are here!</h2> : <br></br>
+                    
+                }   
             </div>
             <div className="">
                 {
